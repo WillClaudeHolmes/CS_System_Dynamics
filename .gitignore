@@ -12,7 +12,7 @@ Desktop.ini
 *.iws
 
 # Jupyter Backup Folder
-.ipynb_checkpoints
+.ipynb_checkpoints/
 
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
