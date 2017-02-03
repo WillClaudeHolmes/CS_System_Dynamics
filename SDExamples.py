@@ -86,11 +86,26 @@ def multiple_dose_drug(dt, timemax, dose, interval, halflife, alpha):
     drug_in_system_array = [drug_in_system]
 
     while t < timemax:
-        if t % interval < dt:
-            drug_in_system += alpha * dose
+        if t % interval < dt:                         #if remainder of t/interval is smaller than dt then
+            drug_in_system += alpha * dose                #add impulse of drug to system.
         drug_in_system -= EliminationConstant * drug_in_system * dt
         t += dt
         t_array.append(t)
-        drug_in_system_array.append(drug_in_system/3000)
+        drug_in_system_array.append(drug_in_system)
 
     return t_array, drug_in_system_array
+
+def format_plot(a):
+    """Format a plot for presenation.  Function takes one parameter, a matplotlib.axes object."""
+
+    goldenratio = 1 / 2 * (1 + math.sqrt(5))  # The next few lines are used for the size of plots
+    fsx = 7  # Width (in inches) for the figures.
+    fsy = fsx / goldenratio  # Height (in inches) for the figures.
+
+    a.tick_params(labelsize=16)
+    a.xaxis.label.set_size(18)
+    a.yaxis.label.set_size(18)
+    a.title.set_size(20)
+    a.legend(fontsize=16)
+    a.get_figure().set_size_inches(fsx, fsy)
+    a.grid(1)
