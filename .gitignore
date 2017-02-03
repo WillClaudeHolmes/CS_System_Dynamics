@@ -5,10 +5,14 @@ ehthumbs.db
 # Folder config file
 Desktop.ini
 
+
 # User-specific stuff:
 .idea/workspace.xml
 .idea/tasks.xml
 *.iws
+
+# Jupyter Backup Folder
+.ipynb_checkpoints
 
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
