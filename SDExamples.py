@@ -22,7 +22,10 @@ def grow(dt):
     return t_array, population_array
 
 def growslow(dt):
-    """Calculates the population vs time for given parameters."""
+    """Calculates the population vs time for given parameters.
+    This function runs slightly slower the grow().  It recalculates rate*dt each time step.
+    Since these are both constants, there product could be calculated outside of the
+    timestep loop and save one multiplication operation per timestep."""
 
     rate = 0.1
     p0 = 100
